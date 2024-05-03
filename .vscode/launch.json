@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "Backend",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/server",
+      "runtimeArgs": ["run-script", "dev"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node",
+      "console": "integratedTerminal"
+    }
+  ]
+}
