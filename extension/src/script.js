@@ -8,7 +8,6 @@ document.addEventListener("focusin", function (event) {
 
     ghostText.style.zIndex = "100";
 
-    // place the element right after the input
     event.target.parentNode.insertBefore(ghostText, event.target.nextSibling);
 
     copyStyles(event.target, ghostText);
@@ -20,12 +19,12 @@ document.addEventListener("focusin", function (event) {
       }
       const targetElement = e.target;
       const suggestion = await getSuggestion(targetElement.value);
-      ghostText.textContent = targetElement.value + ` ${suggestion}`;
-    }, 300); // 300ms debounce delay
+      ghostText.textContent = targetElement.value + `${suggestion}`;
+    }, 500);
 
     event.target.addEventListener("input", function (e) {
-      ghostText.textContent = e.target.value; // Update immediately with user input
-      debouncedInputHandler(e); // Call the debounced handler for suggestions
+      ghostText.textContent = e.target.value;
+      debouncedInputHandler(e);
     });
 
     event.target.addEventListener("keydown", function (e) {
