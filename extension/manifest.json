@@ -4,14 +4,14 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "src/hello.html",
+    "default_popup": "src/index.html",
     "default_icon": "icon.png"
   },
   "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/script.js"]
+      "js": ["src/index.js"]
     }
   ]
 }
