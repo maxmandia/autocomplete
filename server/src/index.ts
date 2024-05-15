@@ -34,7 +34,7 @@ app.post("/", async (req, res) => {
     const body = req.body;
     const existingText = body.text;
     // const completion = await getGroqChatCompletion(existingText);
-    res.json({ text: "love" });
+    res.json({ text: "and yea..." });
   } catch (error) {
     console.error(error);
     res

@@ -34,6 +34,14 @@ document.addEventListener("focusin", function (event) {
   event.target.dataset.inputListenerAdded = "true";
 });
 
+const resizeObserver = new ResizeObserver((entries) => {
+  for (let entry of entries) {
+    copyStyles(entry.target, ghostText);
+  }
+});
+
+resizeObserver.observe(textarea);
+
 async function getSuggestion(inputValue) {
   try {
     const response = await fetch("http://localhost:8080/", {
