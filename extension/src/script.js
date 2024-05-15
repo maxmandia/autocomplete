@@ -29,7 +29,7 @@ document.addEventListener("focusin", function (event) {
     });
 
     event.target.addEventListener("keydown", function (e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === "s") {
+      if (e.key === "Tab") {
         e.preventDefault();
         event.target.value = ghostText.textContent;
       }
