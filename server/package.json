@@ -14,7 +14,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "groq-sdk": "^0.3.3"
+    "groq-sdk": "^0.3.3",
+    "install": "^0.13.0",
+    "npm": "^10.7.0",
+    "openai": "^4.47.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

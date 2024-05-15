@@ -13,7 +13,7 @@ document.addEventListener("focusin", function (event) {
 
     copyStyles(event.target, ghostText);
 
-    event.target.addEventListener("input", async function (e) {
+    const debouncedInputHandler = debounce(async function (e) {
       if (e.target.value.length === 0) {
         ghostText.textContent = "";
         return;
@@ -21,6 +21,11 @@ document.addEventListener("focusin", function (event) {
       const targetElement = e.target;
       const suggestion = await getSuggestion(targetElement.value);
       ghostText.textContent = targetElement.value + ` ${suggestion}`;
+    }, 300); // 300ms debounce delay
+
+    event.target.addEventListener("input", function (e) {
+      ghostText.textContent = e.target.value; // Update immediately with user input
+      debouncedInputHandler(e); // Call the debounced handler for suggestions
     });
 
     event.target.addEventListener("keydown", function (e) {
@@ -107,4 +112,13 @@ function copyStyles(source, target) {
   target.style.wordWrap = "break-word";
   target.style.borderColor = "transparent";
   target.style.borderStyle = "solid";
+}
+
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
 }
