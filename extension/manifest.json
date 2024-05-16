@@ -1,6 +1,6 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "AI Autocomplete",
+  "description": "AI Autocomplete",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
