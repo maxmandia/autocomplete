@@ -12,6 +12,9 @@ document.addEventListener("focusin", function (event) {
 
     copyStyles(event.target, ghostText);
 
+    // Store ghostText as a property of the textarea
+    event.target.ghostText = ghostText;
+
     const debouncedInputHandler = debounce(async function (e) {
       if (e.target.value.length === 0) {
         ghostText.textContent = "";
@@ -40,11 +43,17 @@ document.addEventListener("focusin", function (event) {
 
 const resizeObserver = new ResizeObserver((entries) => {
   for (let entry of entries) {
-    copyStyles(entry.target, ghostText);
+    // Access ghostText from the textarea element
+    const ghostText = entry.target.ghostText;
+    if (ghostText) {
+      copyStyles(entry.target, ghostText);
+    }
   }
 });
 
-resizeObserver.observe(textarea);
+document.querySelectorAll("textarea").forEach((textarea) => {
+  resizeObserver.observe(textarea);
+});
 
 async function getSuggestion(inputValue) {
   try {
