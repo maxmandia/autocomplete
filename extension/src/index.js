@@ -49,12 +49,6 @@ function handleFocusIn(event) {
   event.target.dataset.inputListenerAdded = "true";
 }
 
-// Apply the logic to all textareas on page load
-document.querySelectorAll("textarea").forEach((textarea) => {
-  handleFocusIn({ target: textarea });
-  resizeObserver.observe(textarea);
-});
-
 const resizeObserver = new ResizeObserver((entries) => {
   for (let entry of entries) {
     // Access ghostText from the textarea element
@@ -63,6 +57,23 @@ const resizeObserver = new ResizeObserver((entries) => {
       copyStyles(entry.target, ghostText);
     }
   }
+});
+
+// Apply the logic to all textareas on page load
+document.querySelectorAll("textarea").forEach((textarea) => {
+  handleFocusIn({ target: textarea });
+  resizeObserver.observe(textarea);
+});
+
+// Listen for button clicks and clear ghost text
+document.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("click", function () {
+    document.querySelectorAll("textarea").forEach((textarea) => {
+      if (textarea.ghostText) {
+        textarea.ghostText.textContent = "";
+      }
+    });
+  });
 });
 
 async function getSuggestion(inputValue) {
