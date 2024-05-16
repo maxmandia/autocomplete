@@ -11,8 +11,8 @@ app.use(express.json()); // Middleware to parse JSON bodies
 
 app.post("/", async (req, res) => {
   try {
-    const { text } = req.body;
-    const completion = await getOpenAIChatCompletion(text);
+    const { text, url } = req.body;
+    const completion = await getOpenAIChatCompletion(text, url);
     res.json({ text: completion.choices[0].message.content });
   } catch (error) {
     console.error(error);
