@@ -1,4 +1,6 @@
-document.addEventListener("focusin", function (event) {
+document.addEventListener("focusin", handleFocusIn);
+
+function handleFocusIn(event) {
   if (event.target.dataset.inputListenerAdded) {
     return;
   }
@@ -26,19 +28,31 @@ document.addEventListener("focusin", function (event) {
     }, 500);
 
     event.target.addEventListener("input", function (e) {
-      ghostText.textContent = e.target.value;
-      debouncedInputHandler(e);
+      if (e.target.value.length === 0) {
+        ghostText.textContent = "";
+      } else {
+        ghostText.textContent = e.target.value;
+        debouncedInputHandler(e);
+      }
     });
 
     event.target.addEventListener("keydown", function (e) {
       if (e.key === "Tab") {
         e.preventDefault();
         event.target.value = ghostText.textContent;
+      } else if (e.key === "Enter") {
+        ghostText.textContent = "";
       }
     });
   }
 
   event.target.dataset.inputListenerAdded = "true";
+}
+
+// Apply the logic to all textareas on page load
+document.querySelectorAll("textarea").forEach((textarea) => {
+  handleFocusIn({ target: textarea });
+  resizeObserver.observe(textarea);
 });
 
 const resizeObserver = new ResizeObserver((entries) => {
@@ -49,10 +63,6 @@ const resizeObserver = new ResizeObserver((entries) => {
       copyStyles(entry.target, ghostText);
     }
   }
-});
-
-document.querySelectorAll("textarea").forEach((textarea) => {
-  resizeObserver.observe(textarea);
 });
 
 async function getSuggestion(inputValue) {
