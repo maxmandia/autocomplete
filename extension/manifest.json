@@ -13,5 +13,11 @@
       "matches": ["<all_urls>"],
       "js": ["src/index.js"]
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/popup.js"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }

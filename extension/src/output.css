@@ -566,24 +566,14 @@ video {
   display: none;
 }
 
-.w-full {
-  width: 100%;
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .p-10 {
   padding: 2.5rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-green-500 {
-  --tw-text-opacity: 1;
-  color: rgb(34 197 94 / var(--tw-text-opacity));
+.p-5 {
+  padding: 1.25rem;
 }
