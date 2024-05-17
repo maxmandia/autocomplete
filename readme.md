@@ -49,7 +49,9 @@ In order to get access to autocomplete anywhere on the web, you'll need to:
 - Click "New Project"
 - Click "Deploy from a GitHub Repo"
 - Find the cloned repository in your GitHub account and deploy
-- Go to settings and change Root Directory to `/server`
+- Go to settings and change Root Directory to `/server` and redeploy
+- While in settings, generate a domain
+- Add
 
 ## Support
 

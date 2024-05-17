@@ -3,6 +3,10 @@
   "description": "AI Autocomplete",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": [
+    "https://aiautocomplete.up.railway.app/",
+    "http://localhost:8080/"
+  ],
   "action": {
     "default_popup": "src/index.html",
     "default_icon": "icon.png"

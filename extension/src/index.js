@@ -78,7 +78,7 @@ document.querySelectorAll("button").forEach((button) => {
 
 async function getSuggestion(inputValue) {
   try {
-    const response = await fetch("http://localhost:8080/", {
+    const response = await fetch("https://aiautocomplete.up.railway.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
