@@ -22,6 +22,10 @@ app.post("/", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "CORS enabled!" });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
