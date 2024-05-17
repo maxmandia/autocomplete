@@ -4,7 +4,7 @@ import cors from "cors";
 import { getOpenAIChatCompletion } from "./models/openai";
 
 const app = express();
-const PORT = 8080;
+const port = Number(process.env.PORT) || 3000;
 
 app.use(cors()); // Enable CORS for all routes and origins
 app.use(express.json()); // Middleware to parse JSON bodies
@@ -26,6 +26,6 @@ app.get("/", (req, res) => {
   res.json({ message: "CORS enabled!" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, "0.0.0.0", function () {
+  console.log(`Server is running on http://localhost:${port}`);
 });
