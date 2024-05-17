@@ -85,6 +85,7 @@ async function getSuggestion(inputValue) {
       },
       body: JSON.stringify({
         text: inputValue,
+        url: window.location.href,
       }),
     });
 
