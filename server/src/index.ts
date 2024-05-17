@@ -6,8 +6,8 @@ import { getOpenAIChatCompletion } from "./models/openai";
 const app = express();
 const port = Number(process.env.PORT) || 3000;
 
-app.use(cors()); // Enable CORS for all routes and origins
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(cors());
+app.use(express.json());
 
 app.post("/", async (req, res) => {
   try {
