@@ -16,6 +16,7 @@
 > [!NOTE]
 >
 > In its current version, autocomplete is only available for `<textarea />` elements.
+> This project is not perfect and am actively welcoming pull requests.
 
 ## How It Works
 
