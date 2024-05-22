@@ -7,7 +7,7 @@
   <br />
   <br />
   <figure>
-    <img src="https://assets.trpc.io/www/v10/v10-dark-landscape.gif" alt="Demo" />
+    <img src="https://imgur.com/SS5mlYk.gif" alt="Demo" />
   </figure>
 </div>
 
