@@ -46,6 +46,7 @@ Ensure the repository is cloned and the `.env` file is populated with the enviro
 
 **Uploading the extension to chrome:**
 
+- Use the domain generated in Railway inside the `extension/src/index.js` file
 - Head to [chrome://extensions/](chrome://extensions/)
 - Enable Developer Mode by clicking the toggle switch in the top right
 - Click "Load Unpacked" in the top left

@@ -1,5 +1,8 @@
 document.addEventListener("focusin", handleFocusIn);
 
+// If you've hosted the server, update the url below
+const API_URL = "http://localhost:8080";
+
 function handleFocusIn(event) {
   if (event.target.dataset.inputListenerAdded) {
     return;
@@ -78,7 +81,7 @@ document.querySelectorAll("button").forEach((button) => {
 
 async function getSuggestion(inputValue) {
   try {
-    const response = await fetch("https://aiautocomplete.up.railway.app/", {
+    const response = await fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
