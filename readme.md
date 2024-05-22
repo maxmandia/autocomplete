@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Autocomplete</h1>
-  <h3>Get autocomplete anywhere on the web.<h3>
+  <h3>Get autocomplete anywhere on the web.</h3>
   <a href="https://twitter.com/passionandfury">
     <img alt="Twitter" src="https://img.shields.io/twitter/url.svg?label=%40passionandfury&style=social&url=https%3A%2F%2Ftwitter.com%2Falexdotjs" />
   </a>
@@ -19,7 +19,7 @@
 
 ## How It Works
 
-Autocomplete uses LLMs like GPT-4o (recommended) or Groq (llama3-8b-8192) to complete the next part of a user's sentence. Autocomplete uses the existing sentance and the current URL as context for the results.
+Autocomplete uses LLMs like GPT-4o (recommended) or Groq (llama3-8b-8192) to complete the next part of a user's sentence. Autocomplete uses the existing sentence and the current URL as context for the results.
 
 ## Quickstart
 
@@ -30,7 +30,7 @@ In order to get access to autocomplete anywhere on the web, you'll need to:
 
 ## Walkthrough
 
-Ensure the repository is cloned and the `.env` file is populated with the environment variables found in `.env.example`. By default the extension uses the GPT4o model, so you can ingore the Groq key if you don't plan on switching models.
+Ensure the repository is cloned and the `.env` file is populated with the environment variables found in `.env.example`. By default the extension uses the GPT4o model, so you can ignore the Groq key if you don't plan on switching models.
 
 **Hosting your backend:**
 
@@ -56,4 +56,4 @@ Congratulations! You have successfully installed the Autocomplete extension and 
 
 ## Support
 
-If you enjoy using Autocomplete and want to support me, feel free to [DM me on Twitter (X)](https://x.com/passionandfury).
+If you enjoy using Autocomplete and want to support me, feel free to [DM me on Twitter](https://twitter.com/passionandfury).
